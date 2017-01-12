@@ -23,4 +23,8 @@ RSpec.describe Budget::Drivers::Git do
       expect(repo.empty?).to be_truthy
     }
   }
+
+  it('can journal a transaction') {
+    expect(git.journal_txn({foo: 'bar'})).to match /[[:xdigit:]]{40}/
+  }
 end

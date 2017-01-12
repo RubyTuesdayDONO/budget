@@ -1,4 +1,5 @@
 require 'rugged'
+require 'json'
 
 require_relative 'file'
 
@@ -26,6 +27,10 @@ module Budget
 
       def with_repo
         yield repo
+      end
+
+      def journal_txn(txn)
+        oid = repo.write(JSON.generate(txn), :blob)
       end
     end
   end
