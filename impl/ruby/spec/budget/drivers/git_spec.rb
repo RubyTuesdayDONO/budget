@@ -17,5 +17,10 @@ RSpec.describe Budget::Drivers::Git do
 
   it('can initialize a datastore') {
     git.configure repo: data_dir
+    git.init
+    git.with_repo { |repo|
+      expect(repo.bare?).to be_truthy
+      expect(repo.empty?).to be_truthy
+    }
   }
 end
