@@ -2,7 +2,7 @@ require 'budget/drivers/git.rb'
 
 require 'fileutils'
 
-data_dir = File.expand_path('../../../../../test/ruby/data', __FILE__)
+data_dir = File.expand_path('../../../../../../test/ruby/data', __FILE__)
 
 RSpec.describe Budget::Drivers::Git do
   before {
