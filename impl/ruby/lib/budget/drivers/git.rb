@@ -23,6 +23,7 @@ module Budget
 
       def init(opts={})
         Rugged::Repository.init_at(repo_path, :bare)
+        return self
       end
 
       def with_repo
