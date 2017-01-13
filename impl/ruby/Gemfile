@@ -2,6 +2,8 @@ source 'https://rubygems.org/'
 
 group :development do
   gem 'rspec', '~> 3.5'
+  gem 'guard'
+  gem 'guard-rspec', require: false
 end
 
 group :production do
