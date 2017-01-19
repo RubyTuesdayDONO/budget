@@ -1,6 +1,8 @@
 module Budget
   module Drivers
-    class File
+    module Storage
+      class File
+      end
     end
   end
 end
