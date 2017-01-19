@@ -1,5 +1,7 @@
-require 'budget/orm/transaction.rb'
-require 'budget/orm/transaction_segments.rb'
+require 'budget/orm/transaction'
+require 'budget/orm/transaction_segments'
+
+require_relative 'transaction_spec_helper'
 
 require 'date'
 
@@ -15,7 +17,7 @@ RSpec.describe Budget::ORM::Transaction do
   }
 
   it('has an ID') {
-    expect(txn.id).to match /[[:xdigit:]]{8}(-[[:xdigit:]]{4}){3}-[[:xdigit:]]{8}/
+    expect(txn.id).to match(TRANSACTION_UUID_PATTERN)
   }
 
   it('has a date') {
